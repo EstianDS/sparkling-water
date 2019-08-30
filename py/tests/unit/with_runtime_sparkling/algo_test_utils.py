@@ -48,3 +48,4 @@ def assertParamsViaSetters(algoName, skip=[]):
             getter = getattr(instance, "get" + name[:1].upper() + name[1:])
             setter(kwargs[name])
             assert getter() == kwargs[name]
+            
