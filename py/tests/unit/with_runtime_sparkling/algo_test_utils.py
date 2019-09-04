@@ -24,7 +24,6 @@ def getParamPairs(algoClass):
     kwargs = {}
     for param in list(params):
         kwargs[param.name] = params[param]
-        # Create instance with all parameters set up in constructor
     return kwargs
 
 
