@@ -25,12 +25,12 @@ from tests.unit.with_runtime_sparkling.algo_test_utils import *
 
 
 def testParamsPassedByConstructor():
-    # Skipping testing of algo option as it does not have getter on purpose
+    # Skipping testing of algo option as we don't generate equal algo
     assertParamsViaConstructor("H2OGridSearch", ["algo"])
 
 
 def testParamsPassedBySetters():
-    # Skipping testing of algo option as it does not have getter on purpose
+    # Skipping testing of algo option as we don't generate equal algo
     assertParamsViaSetters("H2OGridSearch", ["algo"])
 
 
