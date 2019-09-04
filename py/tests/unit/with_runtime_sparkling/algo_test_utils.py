@@ -17,6 +17,7 @@
 
 from pysparkling.ml import *
 
+
 def getParamPairs(algoClass):
     # Create dummy instance which we use just to obtain default values
     params = algoClass()._defaultParamMap
@@ -25,6 +26,7 @@ def getParamPairs(algoClass):
         kwargs[param.name] = params[param]
         # Create instance with all parameters set up in constructor
     return kwargs
+
 
 def assertParamsViaConstructor(algoName, skip=[]):
     AlgoClass = globals()[algoName]
@@ -35,6 +37,7 @@ def assertParamsViaConstructor(algoName, skip=[]):
             # Assert that the getter is giving the value we passed via constructor
             getter = getattr(instance, "get" + name[:1].upper() + name[1:])
             assert getter() == kwargs[name]
+
 
 def assertParamsViaSetters(algoName, skip=[]):
     AlgoClass = globals()[algoName]
@@ -48,4 +51,4 @@ def assertParamsViaSetters(algoName, skip=[]):
             getter = getattr(instance, "get" + name[:1].upper() + name[1:])
             setter(kwargs[name])
             assert getter() == kwargs[name]
-            
+           
